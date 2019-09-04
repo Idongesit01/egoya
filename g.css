@@ -1,0 +1,138 @@
+.main-menu{
+    position: absolute;
+    right: 85px;
+    top: 35px;
+}
+
+.navigation_chekbox{
+    display: none;
+}
+.navigation-button{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #ffffff;
+    position: fixed;
+    right: 85px;
+    top: 35px;
+    z-index: 3000;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.18);
+}
+.navigation-icon{
+    margin-top: 1.2rem;
+    position: relative;
+    transition: all .5s ease;
+}
+
+.navigation-icon,
+.navigation-icon::before,
+.navigation-icon::after{
+    content: "";
+    background-color: #777;
+    height: 2px;
+    width: 1rem;
+    display: inline-block;
+    transition: all .5s ease;
+}
+
+.navigation-icon::before,
+.navigation-icon::after{
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.navigation-icon::after{
+    top: .3rem;
+}
+.navigation-icon::before{
+    bottom: .3rem;
+}
+.navigation-button:hover .navigation-icon::before{
+    top: -.4rem;
+}
+.navigation-button:hover .navigation-icon::after{
+    top: .5rem;
+}
+.navigation-button:hover + .navigation-icon::after{
+    top: .5rem;
+}
+.navigation_chekbox:checked + .navigation-button .navigation-icon{
+    background-color: transparent;
+}
+.navigation_chekbox:checked + .navigation-button .navigation-icon::before{
+    top: 0;
+    transform: rotate(-135deg);
+    background-color: #2998ff;
+}
+.navigation_chekbox:checked + .navigation-button  .navigation-icon::after{
+    top: 0;
+    transform: rotate(135deg);
+    background-color: #2998ff;
+}
+
+.main-menu-bg{
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    right: 85px;
+    top: 35px;
+    z-index: 1000;
+    text-align: center;
+    background-image: linear-gradient(to left bottom, #2998ff, #0070BA);
+    transition: all .3s;
+}
+.main-navigation-nav{
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vh;
+    opacity: 0;
+    width: 0;
+    z-index: 1500;
+    transition: opacity .3s;
+}
+
+.main-navigation-list{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    list-style: none; 
+    color: #fff;
+
+}
+.main-menu-list-item{
+    margin: 1rem;
+}
+
+.main-navigation-link:link, .main-navigation-link:visited{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+    background-size: 220%;
+    transition: all .8s;
+}
+
+.main-navigation-link:hover{
+    background-position: 100%;
+    transform: translateX(1rem);
+    color: #2998ff;
+}
+
+.main-menu-list-item .main-header-social-icons{
+    margin: 0 auto;
+}
+.navigation_chekbox:checked ~ .main-menu-bg {
+    transform: scale(80);
+}
+
+.navigation_chekbox:checked ~ .main-navigation-nav{
+    opacity: 1;
+    width: 100%;
+}
